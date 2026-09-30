@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduGenie - Google Gemini powered learning assistant">
+    <title>EduGenie | AI Learning Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">Edu</span>
+            <span>
+                <strong>EduGenie</strong>
+                <small>AI Learning Assistant</small>
+            </span>
+        </a>
+
+        <div class="topbar-badge" id="apiBadge" aria-live="polite">
+            <span class="status-dot"></span>
+            Connecting to EduGenie
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow"><span class="eyebrow-mark"></span> YOUR PERSONAL STUDY STUDIO</div>
+                <h1>Make room<br>for <span>understanding.</span></h1>
+                <p>
+                    One calm space to ask, explore, revise, and build your next learning step.
+                </p>
+
+                <div class="hero-pills">
+                    <span>01 Ask</span><span>02 Understand</span><span>03 Practice</span>
+                </div>
+            </div>
+
+            <div class="hero-note" aria-label="Study note">
+                <div class="note-topline"><span>STUDY NOTE / 001</span><span>EDUGENIE</span></div>
+                <div class="note-rule"></div>
+                <p>Curiosity is a good<br>place to begin.</p>
+                <div class="note-bottom"><span>LEARN AT YOUR PACE</span><span class="note-star">✳</span></div>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="input-card glass-panel">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">START A SESSION</span>
+                        <h2>What are we learning?</h2>
+                    </div>
+                    <span class="step-badge">STEP 1</span>
+                </div>
+
+                <div class="task-grid" id="taskGrid">
+                    <button class="task active" data-task="qa">
+                        <span class="task-icon">?</span>
+                        <span><strong>Ask</strong><small>Get an answer</small></span>
+                    </button>
+                    <button class="task" data-task="explain">
+                        <span class="task-icon">✦</span>
+                        <span><strong>Explain</strong><small>Make it simple</small></span>
+                    </button>
+                    <button class="task" data-task="summarize">
+                        <span class="task-icon">≡</span>
+                        <span><strong>Summarize</strong><small>Quick revision</small></span>
+                    </button>
+                    <button class="task" data-task="quiz">
+                        <span class="task-icon">✓</span>
+                        <span><strong>Quiz</strong><small>Test yourself</small></span>
+                    </button>
+                    <button class="task" data-task="learn">
+                        <span class="task-icon">↗</span>
+                        <span><strong>Learn Path</strong><small>Study roadmap</small></span>
+                    </button>
+                </div>
+
+                <label for="inputText" id="inputLabel">Ask your question</label>
+                <textarea id="inputText" placeholder="Example: Which is the largest ocean?"></textarea>
+
+                <div class="input-footer">
+                    <span id="helperText">Tip: Ask a clear question for a focused answer.</span>
+                    <span id="charCount">0 characters</span>
+                </div>
+
+                <button class="primary-button" id="submitBtn">
+                    <span id="buttonIcon">✦</span>
+                    <span id="buttonText">Ask EduGenie</span>
+                    <span class="button-arrow">→</span>
+                </button>
+            </div>
+
+            <div class="output-card glass-panel">
+                <div class="output-heading">
+                    <div>
+                        <span class="section-kicker">AI RESPONSE</span>
+                        <h2>Your learning result</h2>
+                    </div>
+                    <span class="response-status ready" id="status">READY</span>
+                </div>
+
+                <div class="result" id="result">
+                    <div class="empty-state">
+                        <div class="empty-orb">✦</div>
+                        <h3>EduGenie is ready</h3>
+                        <p>Choose a learning tool, enter your content, and your response will appear here.</p>
+                        <div class="example-row">
+                            <button data-example="Which is the largest ocean?">Try Q&amp;A</button>
+                            <button data-example="Pythagoras theorem">Try Explain</button>
+                            <button data-example="SQL">Try Learning Path</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <div class="section-heading centered">
+                <span class="section-kicker">ONE ASSISTANT • FIVE TOOLS</span>
+                <h2>Everything you need to learn smarter</h2>
+            </div>
+
+            <div class="feature-grid">
+                <article><span>01</span><h3>Smart Q&amp;A</h3><p>Get concise, contextual answers to academic and general knowledge questions.</p></article>
+                <article><span>02</span><h3>Simple Explanations</h3><p>Break difficult subjects into definitions, examples, key points, and recaps.</p></article>
+                <article><span>03</span><h3>Instant Summaries</h3><p>Turn long study material into focused revision notes without losing the core meaning.</p></article>
+                <article><span>04</span><h3>Interactive Quizzes</h3><p>Generate three MCQs with four options and immediate answer feedback.</p></article>
+                <article><span>05</span><h3>Learning Paths</h3><p>Move from prerequisites to beginner, intermediate, advanced topics, and projects.</p></article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div><strong>EduGenie</strong> — Google Gemini Powered Learning Assistant</div>
+        <span>Built with FastAPI • HTML • CSS • JavaScript</span>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
